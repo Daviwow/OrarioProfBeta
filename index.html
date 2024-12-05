@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elenco Docenti</title>
+    <title>Orario Docenti ITIS Cartesio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,8 +13,11 @@
             Il tuo browser non supporta il tag video.
         </video>
     </div>
+    <div id="sound-toggle">
+        <img id="sound-icon" src="assets/sound.png" alt="Sound Toggle" onclick="toggleSound()">
+    </div>
     <div id="main-container">
-        <h1>Elenco Persone</h1>
+        <h1>Elenco Docenti</h1>
         <ul id="list">
             <li onclick="showDetails('cristina')">
                 <img src="profiles/cosmopolita.png" alt="Cristina Corazza">
@@ -28,6 +31,22 @@
                 <img src="profiles/strega.png" alt="Patrizia Mazzotta">
                 <span>Patrizia Mazzotta</span>
             </li>
+            <li onclick="showDetails('eleonora')">
+                <img src="profiles/swiftie.png" alt="Eleonora Pace">
+                <span>Eleonora Pace</span>
+            </li>
+            <li onclick="showDetails('marta')">
+                <img src="profiles/fuggiasca.png" alt="Marta Loforte">
+                <span>Marta Loforte</span>
+            </li>
+            <li onclick="showDetails('silvia')">
+                <img src="profiles/butterfly.png" alt="Silvia Vallefuoco">
+                <span>Silvia Vallefuoco</span>
+            </li>
+            <li onclick="showDetails('simona')">
+                <img src="profiles/gelataia.png" alt="Simona Previti">
+                <span>Simona Previti</span>
+            </li>
         </ul>
     </div>
     <div id="details-container" style="display: none;">
@@ -36,6 +55,7 @@
         <p id="schedule"></p>
         <button id="view-timetable" onclick="showTimetable()" style="margin-top: 20px;">Visualizza Orario</button>
         <iframe id="pdf-viewer" style="width: 100%; height: 600px; display: none;" frameborder="0"></iframe>
+        <audio id="profile-audio" style="display: none;"></audio>
     </div>
     <script src="script.js"></script>
 </body>
