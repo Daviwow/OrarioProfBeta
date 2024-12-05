@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elenco Persone</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="background-video-container">
+        <video autoplay loop muted id="background-video">
+            <source src="assets/background.mp4" type="video/mp4">
+            Il tuo browser non supporta il tag video.
+        </video>
+    </div>
+    <div id="main-container">
+        <h1>Elenco Persone</h1>
+        <ul id="list">
+            <li onclick="showDetails('cristina')">
+                <img src="profiles/cosmopolita.png" alt="Cristina Corazza">
+                <span>Cristina Corazza</span>
+            </li>
+            <li onclick="showDetails('roberta')">
+                <img src="profiles/scorbutica.png" alt="Roberta Roberti">
+                <span>Roberta Roberti</span>
+            </li>
+            <li onclick="showDetails('patrizia')">
+                <img src="profiles/strega.png" alt="Patrizia Mazzotta">
+                <span>Patrizia Mazzotta</span>
+            </li>
+        </ul>
+    </div>
+    <div id="details-container" style="display: none;">
+        <button onclick="goBack()">Torna all'elenco</button>
+        <h2 id="person-name"></h2>
+        <p id="schedule"></p>
+        <button id="view-timetable" onclick="showTimetable()" style="margin-top: 20px;">Visualizza Orario</button>
+        <iframe id="pdf-viewer" style="width: 100%; height: 600px; display: none;" frameborder="0"></iframe>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
