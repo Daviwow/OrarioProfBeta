@@ -5,7 +5,7 @@ body {
     background-color: #f5f5f5;
     overflow-y: auto; /* Permette lo scroll verticale */
     color: white;
-    height: 100vh;
+    height: 100%; /* Imposta l'altezza del body */
 }
 
 #background-video-container {
@@ -16,6 +16,7 @@ body {
     height: 100%;
     z-index: -1;
     overflow: hidden;
+    pointer-events: none; /* Disabilita l'interazione con il video */
 }
 
 #background-video {
@@ -51,6 +52,7 @@ body {
     margin: 10px auto;
     max-width: 900px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden; /* Evita lo scroll interno */
 }
 
 h1 {
@@ -65,8 +67,8 @@ ul#list {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    max-height: 80vh; /* Imposta un'altezza massima per lo scroll */
-    overflow-y: auto; /* Abilita lo scroll verticale per l'elenco */
+    max-height: calc(100vh - 200px); /* Altezza massima relativa allo schermo */
+    overflow-y: scroll; /* Abilita lo scroll verticale */
 }
 
 ul#list li {
@@ -135,6 +137,10 @@ button:hover {
 
 /* Miglioramenti per dispositivi mobili */
 @media screen and (max-width: 600px) {
+    body {
+        overflow-y: scroll; /* Abilita lo scroll */
+    }
+
     #main-container, #details-container {
         padding: 15px;
         margin: 5px;
